@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        .container{
+            width: 600px;
+            height: 500px;
+            background-color: aqua;
+            position: relative;
+            
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            position: absolute;
+            top: 20px;
+           
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+        </div>
+    </div>
+</body>
+<script>
+    let counter=0;
+    var id=setInterval(animate,300)
+    function animate(){
+        counter=counter+10;
+       
+        
+        if(counter==510){
+            clearInterval(id);
+            setTimeout(location.reload(),500)
+        }
+        else{
+            document.querySelector(".box").style.left=`${counter}px`;
+        }
+
+    }
+</script>
+</html>
